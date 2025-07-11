@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { clerkMiddleware } from '@clerk/express';
 import userRoutes from "./routes/user.route.js";
+import postRoutes from "./routes/post.route.js"; 
 import {ENV} from "./config/env.js";
 import {connectDB} from "./config/db.js";
 
@@ -21,6 +22,7 @@ app.get("/",(req, res) => {
 });
 
 app.use("/api/users",userRoutes);
+app.use("/api/posts", postRoutes); // Assuming userRoutes handles posts as well
 
 // Remove the now-redundant top-level calls to connectDB(), app.get(...) and app.listen(...)
 
