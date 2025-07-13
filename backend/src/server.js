@@ -24,6 +24,12 @@ app.get("/",(req, res) => {
 app.use("/api/users",userRoutes);
 app.use("/api/posts", postRoutes); // Assuming userRoutes handles posts as well
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
 // Remove the now-redundant top-level calls to connectDB(), app.get(...) and app.listen(...)
 
 const startServer = async () => {
