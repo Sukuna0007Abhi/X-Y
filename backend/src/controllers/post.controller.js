@@ -3,6 +3,8 @@ import Post from '../models/post.model.js';
 import User from '../models/user.model.js';
 import { getAuth } from '../middleware/auth.middleware.js';
 import cloudinary from '../config/cloudinary.js';
+import Notification from '../models/notification.model.js';
+import Comment from '../models/comment.model.js';
 
 export const getPosts = asyncHandler(async (req, res) => {
     const posts = await Post.find()
@@ -186,7 +188,7 @@ export const deletePost = asyncHandler(async (req, res) => {
     }
 
     // delete all the comments associated with the post
-    await Post.deleteMany({ post: postId });
+    await Comment.deleteMany({ post: postId });
 
     // delete the post
     await Post.findByIdAndDelete(postId);

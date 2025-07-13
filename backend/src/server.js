@@ -26,8 +26,8 @@ app.use("/api/posts", postRoutes); // Assuming userRoutes handles posts as well
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
+  console.error("Unhandled error:", err);
+  res.status(500).json({ error: err.message ||"Internal Server Error" });
 });
 
 // Remove the now-redundant top-level calls to connectDB(), app.get(...) and app.listen(...)
