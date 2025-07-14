@@ -42,7 +42,7 @@ const startServer = async () => {
   try {
     await connectDB();
     
-    // listen for local development
+    // listen for only in production mode
     if(ENV.NODE_ENV === 'production') {
       app.listen(ENV.PORT, () => {
         console.log(`Server is running in production mode on port ${ENV.PORT}`);
