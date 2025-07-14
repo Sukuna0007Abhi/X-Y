@@ -21,9 +21,9 @@ app.use(express.json());
 app.use(clerkMiddleware());
 app.use(arcjetMiddleware); // Arcjet middleware for security, rate limiting, and bot protection
 
-// app.get("/",(req, res) => {
-//   res.send("Hello, World!")
-// });
+app.get("/",(req, res) => {
+  res.send("Hello, World!")
+});
 
 app.use("/api/users",userRoutes);
 app.use("/api/posts", postRoutes); // Assuming userRoutes handles posts as well
