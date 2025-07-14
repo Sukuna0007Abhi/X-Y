@@ -7,6 +7,7 @@ import commentRoutes from "./routes/comment.route.js";
 import notificationRoutes from "./routes/notification.route.js";
 import {ENV} from "./config/env.js";
 import {connectDB} from "./config/db.js";
+import { arcjetMiddleware } from './middleware/arcjet.middleware.js';
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 
 // Using Clerk middleware for authentication
 app.use(clerkMiddleware());
+app.use(arcjetMiddleware); // Arcjet middleware for security, rate limiting, and bot protection
 
 app.get("/",(req, res) => {
   res.send("Hello, World!")
