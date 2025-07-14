@@ -28,7 +28,7 @@ app.get("/",(req, res) => {
 app.use("/api/users",userRoutes);
 app.use("/api/posts", postRoutes); // Assuming userRoutes handles posts as well
 app.use("/api/comments", commentRoutes);
-app.use('/api/notifications', notificationRoutes); 
+app.use("/api/notifications", notificationRoutes); 
 
 // Error handling middleware
 app.use((err, req, res, next) => {

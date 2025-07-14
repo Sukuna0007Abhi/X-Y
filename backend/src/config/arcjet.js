@@ -1,5 +1,5 @@
 import arcjet, { tokenBucket, shield, detectBot } from '@arcjet/node';
-import { ENV } from '../env.js';
+import { ENV } from '../config/env.js';
 
 // Initialize Arcjet with the security rules
 
@@ -19,7 +19,7 @@ export const aj = arcjet({
         // RATE LIMITING WITH TOKEN BUCKET ALGORITHM 
         tokenBucket({
             mode: 'LIVE',
-            refilRate: 20, // 20 requests per second
+            refillRate: 20, // 20 requests per second
             interval: 10, //interval in seconds
             capacity: 30, // maximum tokens in the bucket
         }),
