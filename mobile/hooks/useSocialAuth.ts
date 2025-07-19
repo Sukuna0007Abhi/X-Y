@@ -1,5 +1,6 @@
 import { useSSO } from '@clerk/clerk-expo';
 import { useState } from 'react';
+import { Alert } from 'react-native';
 export const useSocialAuth = () => {
     const [isLoading, setIsLoading] = useState(false);
     const {startSSOFlow} = useSSO();
@@ -16,7 +17,7 @@ export const useSocialAuth = () => {
         } catch (err) {
             console.log("Social Auth Error:", err);
             const provider = startegy === "oauth_google" ? "Google" : "Apple";
-            alert(`Failed to sign in with ${provider}. Please try again.`);
+            Alert.alert(`Failed to sign in with ${provider}. Please try again.`);
         } finally {
             setIsLoading(false);
         }
