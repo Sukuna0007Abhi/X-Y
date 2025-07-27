@@ -67,7 +67,10 @@ const searchScreens = () => {
               </Pressable>
             ))
           ) : (
-            <Text>No trending topics found.</Text>
+            <Text>
+              No trending topics found!{"\n"}{"\n"}
+              "Take some steps in life, looser" ~CaseOh
+            </Text>
           )}
         </View>
       </ScrollView>
