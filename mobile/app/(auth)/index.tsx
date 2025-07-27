@@ -20,16 +20,18 @@ export default function Index() {
 
       <TouchableOpacity
         className="flex-row items-center justify-center bg-white border border-gray-300 rounded-full py-3 px-6"
-        onPress={() => handleSocialAuth("oauth_google")}
+        onPress={() => {
+          handleSocialAuth("oauth_google");
+        }}
         disabled={isLoading}
-            style={{
-                shadowColor: "#000",
-                shadowOffset: { width: 0, height: 1 },
-                shadowOpacity: 0.1,
-                shadowRadius: 2,
-                elevation: 2, 
-              }}
-            >
+        style={{
+          shadowColor: "#000",
+          shadowOffset: { width: 0, height: 1 },
+          shadowOpacity: 0.1,
+          shadowRadius: 2,
+          elevation: 2, 
+        }}
+      >
             {isLoading ? (
                   <ActivityIndicator size="small" color="#4285F4" />
                 ) : (
@@ -48,15 +50,17 @@ export default function Index() {
 
       <TouchableOpacity
         className="flex-row items-center justify-center bg-white border border-gray-300 rounded-full py-3 px-6"
-        onPress={() => handleSocialAuth("oauth_apple")}
+        onPress={() => {
+          handleSocialAuth("oauth_apple");
+        }}
         disabled={isLoading}
-            style={{
-                shadowColor: "#000",
-                shadowOffset: { width: 0, height: 1 },
-                shadowOpacity: 0.1,
-                shadowRadius: 2,
-                elevation: 2, 
-              }}
+        style={{
+          shadowColor: "#000",
+          shadowOffset: { width: 0, height: 1 },
+          shadowOpacity: 0.1,
+          shadowRadius: 2,
+          elevation: 2, 
+        }}
       >
             {isLoading ? (
                   <ActivityIndicator size="small" color="#000" />
