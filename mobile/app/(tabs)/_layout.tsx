@@ -25,7 +25,9 @@ const TabsLayout = () => {
             borderTopWidth: 1,
             borderTopColor: '#E1E8ED',
             height: 45 + insets.bottom,
-            paddingTop: 8,
+        },
+        tabBarItemStyle: {
+            paddingVertical: 8,
         },
         headerShown: false,
       }}
