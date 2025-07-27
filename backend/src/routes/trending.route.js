@@ -14,6 +14,4 @@ router.get('/', (req, res) => {
   res.json(trending);
 });
 
-module.exports = router;
-
 export default router;
